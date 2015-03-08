@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/SurveyMan/Debugger.png?branch=master)](https://travis-ci.org/etosch/SurveyMan)
-# Usage
 
 # Usage
 After cloning this repository, run 
