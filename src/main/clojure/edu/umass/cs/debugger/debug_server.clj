@@ -20,7 +20,7 @@
   (-> (Slurpie/slurp url) (StringReader.) (CSVLexer.) (CSVParser.) (.parse)))
 
 (def prototypicalitySurvey (makeSurvey "http://surveyman.github.io/SurveyMan/src/test/resources/prototypicality.csv"))
-(def prototypicalityStaticAnalysis (StaticAnalysis/staticAnalysis prototypicalitySurvey classifier 100 0.1 0.5))
+(def prototypicalityStaticAnalysis (StaticAnalysis/staticAnalysis prototypicalitySurvey classifier 0 0.1 0.5))
 (def prototypicalityDynamicAnalysis
   (reduce cons [] (pmap (DynamicAnalysis/dynamicAnalysis
                          prototypicalitySurvey
@@ -28,7 +28,7 @@
                          Classifier/LOG_LIKELIHOOD
                          false
                          0.05)
-                    (file-seq (file "src/main/resources/results/phonology")))))
+                    (file-seq (file "src/main/resources/results/prototypicality")))))
 
 
 (def wageSurvey (makeSurvey "http://surveyman.github.io/SurveyMan/src/test/resources/wage_survey.csv"))
